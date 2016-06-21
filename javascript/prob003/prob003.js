@@ -40,4 +40,25 @@ var nextPrime = function(n) {
 // console.log(nextPrime(93));
 
 // 2. find prime factors for n
+var primeFactors = function(n, fs) {
+	if (n == 1) {
+		return fs;
+	}
+	for (var i = 2; i<=Math.sqrt(n); i++) { 
+  		// console.log(i);
+		if (isPrime(i) && n % i == 0) {
+      		fs.push(i);
+			return primeFactors(n/i, fs);
+		}
+	}
+	fs.push(n);
+	return fs;
+}
+
+// console.log(primeFactors(2, []));
+// console.log(primeFactors(3, []));
+// console.log(primeFactors(4, []));
+// console.log(primeFactors(93, []));
+// console.log(primeFactors(13195, []));
+
 // 3. result for 600851475143
