@@ -62,3 +62,7 @@ var primeFactors = function(n, fs) {
 // console.log(primeFactors(13195, []));
 
 // 3. result for 600851475143
+var fs = primeFactors(600851475143, []);
+console.log(fs);
+
+// -> 6857
