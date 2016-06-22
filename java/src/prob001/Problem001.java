@@ -1,3 +1,4 @@
+package prob001;
 
 import java.util.stream.IntStream;
 /**
@@ -5,7 +6,7 @@ import java.util.stream.IntStream;
  * Find the sum of all the multiples of 3 or 5 below 1000.
  */
 public class Problem001 {
-	
+
 	public static void main(final String... args) {
 
 		// naive solution
