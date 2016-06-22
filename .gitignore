@@ -1,1 +1,6 @@
 *.class
+*.iml
+java/out
+java/out/*
+java/.idea
+java/.idea/*
