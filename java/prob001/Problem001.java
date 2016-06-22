@@ -6,6 +6,21 @@
 public class Problem001 {
 	
 	public static void main(final String... args) {
-		System.out.println("Hallo Welt!");
+
+		// naive solution
+		final int N = 1000;
+		int sum = 0;
+
+		for (int i=0; i<N; i++) {
+
+			if (i % 3 == 0 || i % 5 == 0) {
+				sum += i;
+			}
+		}
+
+		System.out.println(sum);
+		// -> 233168
+
+		// TODO now try with streams, filter, reduce
 	}
 }
