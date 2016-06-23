@@ -1,5 +1,6 @@
 package prob003;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -12,5 +13,9 @@ public class Prob003 {
     public static void main(String... args) {
         Stream<Integer> primes = Primes.stream();
         primes.limit(10).forEach(System.out::println);
+
+        List<Integer> fs = Primes.factorize(600851475143l);
+        System.out.println(fs);
+        // -> 6857
     }
 }
