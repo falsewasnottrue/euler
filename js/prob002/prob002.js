@@ -38,3 +38,4 @@ var result = fibs.filter(function(n) {
 }, 0);
 
 console.log(result);
+// 4613732
