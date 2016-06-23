@@ -4,3 +4,7 @@ java/out
 java/out/*
 java/.idea
 java/.idea/*
+scala/out
+scala/out/*
+scala/.idea
+scala/.idea/*
