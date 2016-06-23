@@ -1,4 +1,4 @@
 	js	java	scala	go
-001	x	x	-	-
+001	x	x	x	-
 002	x	x 	- 	-
 003	x	-	-	-
