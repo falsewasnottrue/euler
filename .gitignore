@@ -8,3 +8,5 @@ scala/out
 scala/out/*
 scala/.idea
 scala/.idea/*
+scala/lib
+scala/lib/*
