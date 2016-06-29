@@ -9,9 +9,7 @@ String.prototype.reverse = function () {
     return this.split("").reverse().join("");
 }
 
-var isPalindrom = function(n, k) {
-	// Optimierungsidee: n+k % (1)lange von k == 0
-	// z.B. 123 + 321 = 444 % 111 == 0
+var isPalindrom = function(n) {
 	var s = n.toString();
 	return s === s.reverse();
 }
