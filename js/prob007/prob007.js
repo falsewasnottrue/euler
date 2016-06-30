@@ -20,11 +20,15 @@ function Sieve() {
 	for (var i=0; i<this.capacity; i++) {
 		this.sieve[i] = true;
 	}
+	this.sieve[0] = false;
+	this.sieve[1] = false;
 }
 Sieve.prototype.next = function() {
 	do {
 		this.position++;
-		// TODO check capacity, resieve
+		if (this.position == this.capacity) {
+			this.resieve();
+		}
 	} while (!this.sieve[this.position])
 
 	for (var i = 2 * this.position; i<this.capacity; i += this.position) {
@@ -33,10 +37,27 @@ Sieve.prototype.next = function() {
   
 	return this.position;
 }
+Sieve.prototype.resieve = function() {
+	var newCapacity = 2 * this.capacity;
+	
+	for (var i=this.capacity; i<newCapacity; i++) {
+		this.sieve[i] = true;
+	}
+	for (var i=2; i<this.capacity; i++) {
+		if (this.sieve[i]) {
+			for (var j=2*i; j<newCapacity; j+=i) {
+				this.sieve[j] = false;
+			}
+		}
+	}
+
+	this.capacity = newCapacity;
+}
 
 var sieve = new Sieve();
-var N = 3;
+var N = 10001;
 
 for (var i=0; i<N; i++) {
 	console.log(sieve.next());
 }
+// -> 104743
