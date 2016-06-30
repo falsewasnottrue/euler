@@ -17,6 +17,10 @@ public class MultiSet<T> {
         return occurrences.size();
     }
 
+    public Set<T> elements() {
+        return occurrences.keySet();
+    }
+
     public void put(final T elem) {
         occurrences.put(elem, occurrences.getOrDefault(elem, 0) + 1);
     }
