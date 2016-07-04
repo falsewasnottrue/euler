@@ -1,4 +1,4 @@
-package prob005;
+package util;
 
 import java.util.*;
 import java.util.function.BiFunction;

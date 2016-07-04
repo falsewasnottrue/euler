@@ -1,4 +1,4 @@
-package prob004;
+package util;
 
 public class Palindrom {
 

@@ -1,6 +1,7 @@
 package prob005;
 
-import prob003.Primes;
+import util.MultiSet;
+import util.Primes;
 
 import java.util.ArrayList;
 import java.util.List;

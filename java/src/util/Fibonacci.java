@@ -1,4 +1,4 @@
-package prob002;
+package util;
 
 import java.util.function.Supplier;
 import java.util.stream.Stream;

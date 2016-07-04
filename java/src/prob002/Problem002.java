@@ -1,5 +1,7 @@
 package prob002;
 
+import util.Fibonacci;
+
 import java.util.stream.Stream;
 
 /**

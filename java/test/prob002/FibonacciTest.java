@@ -1,6 +1,7 @@
 package prob002;
 
 import org.junit.Test;
+import util.Fibonacci;
 
 import java.util.stream.Stream;
 

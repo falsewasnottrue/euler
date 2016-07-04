@@ -1,4 +1,4 @@
-package prob003;
+package util;
 
 import java.util.ArrayList;
 import java.util.Iterator;

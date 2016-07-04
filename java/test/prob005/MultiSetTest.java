@@ -2,6 +2,7 @@ package prob005;
 
 import org.junit.Before;
 import org.junit.Test;
+import util.MultiSet;
 
 import java.util.Arrays;
 
