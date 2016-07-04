@@ -1,7 +1,7 @@
 package util
 
 object Primes {
-  def isPrime(n: Int): Boolean =
+  def isPrime(n: Int): Boolean = if (n<2) false else
     (2 to Math.sqrt(n).toInt).forall(n % _ != 0)
 
   def nextPrime(n: Int): Int = if (isPrime(n+1)) n+1 else nextPrime(n+1)
