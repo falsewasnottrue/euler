@@ -1,6 +1,6 @@
 package prob003
 
-import Primes._
+import util.Primes.primeFactors
 
 /**
   * The prime factors of 13195 are 5, 7, 13 and 29.

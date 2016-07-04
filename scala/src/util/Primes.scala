@@ -1,4 +1,4 @@
-package prob003
+package util
 
 object Primes {
   def isPrime(n: Int): Boolean =
@@ -6,7 +6,7 @@ object Primes {
 
   def nextPrime(n: Int): Int = if (isPrime(n+1)) n+1 else nextPrime(n+1)
 
-  def primeFactors(n: Long): List[Int] = {
+  def primeFactors(n: Long): Seq[Int] = {
     def primeFactorsAcc(n: Long, currPrime: Int, acc: List[Int]): List[Int] = if (n==1) {
       acc
     } else {
