@@ -1,4 +1,4 @@
-package prob005;
+package util;
 
 import org.junit.Before;
 import org.junit.Test;

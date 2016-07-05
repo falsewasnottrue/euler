@@ -1,4 +1,4 @@
-package prob004;
+package euler;
 
 import util.Palindrom;
 

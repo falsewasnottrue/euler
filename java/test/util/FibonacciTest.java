@@ -1,4 +1,4 @@
-package prob002;
+package util;
 
 import org.junit.Test;
 import util.Fibonacci;
