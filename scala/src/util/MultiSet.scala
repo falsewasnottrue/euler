@@ -2,6 +2,8 @@ package util
 
 case class MultiSet[T](occurrences: Map[T, Int] = Map[T, Int]()) {
 
+  def size(): Int = occurrences.keys.size
+
   def put(elem: T, count: Int = 1): MultiSet[T] = MultiSet(occurrences.updated(elem, get(elem)+count))
 
   def get(elem: T): Int = occurrences.getOrElse(elem, 0)

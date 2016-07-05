@@ -1,4 +1,4 @@
-package prob003
+package euler
 
 import util.Primes.primeFactors
 
