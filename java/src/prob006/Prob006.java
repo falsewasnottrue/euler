@@ -1,5 +1,7 @@
 package prob006;
 
+import java.math.BigInteger;
+
 /**
  * The sum of the squares of the first ten natural numbers is,
  * 12 + 22 + ... + 102 = 385
@@ -11,4 +13,23 @@ package prob006;
  * Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
  */
 public class Prob006 {
+
+    public static void main(String... args) {
+        final int N = 100;
+
+        BigInteger sumOfSquares = BigInteger.ZERO;
+        for (int i=1; i<=N; i++) {
+            sumOfSquares = sumOfSquares.add(BigInteger.valueOf(i*i));
+        }
+
+        BigInteger squareOfSums = BigInteger.ZERO;
+        for (int i=1; i<=N; i++) {
+            squareOfSums = squareOfSums.add(BigInteger.valueOf(i));
+        }
+        squareOfSums = squareOfSums.multiply(squareOfSums);
+
+        final BigInteger result = squareOfSums.subtract(sumOfSquares);
+        System.out.println(result);
+        // -> 25164150
+    }
 }
