@@ -7,7 +7,7 @@ case class Polynomial(coefficients: List[Double]) {
   override val toString = if (coefficients == Nil) "0" else coefficients.zipWithIndex.
     map { case (value, pos) => (value, pos-degree) }.
     filter( _._1 != 0).
-    map { case (value, deg) => s"$value x^$deg" }.mkString("+")
+    map { case (value, deg) => s"$value * x^$deg" }.mkString("+")
 
   // ...
 }
