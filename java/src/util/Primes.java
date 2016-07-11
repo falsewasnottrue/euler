@@ -1,8 +1,6 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -43,6 +41,51 @@ public class Primes {
                 result.add(prime);
             }
         }
+        return result;
+    }
+
+    public static Set<Integer> divisors(final long n) {
+        final List<Integer> factors = factorize(n);
+        final Set<Integer> result = new HashSet<>(factors);
+        result.add(1);
+        for (List<Integer> subset : subsets(factors)) {
+            int divisor = subset.stream().reduce(1, (acc, i) -> acc * i);
+            result.add(divisor);
+        }
+
+        return result;
+    }
+
+    private static <T> List<List<T>> subsets(final List<T> is) {
+        List<List<T>> result = new ArrayList<>();
+        if (is.isEmpty()) {
+            result.add(new ArrayList<>());
+        } else {
+            for (int pos = 0; pos<is.size(); pos++) {
+                final T i = is.get(pos);
+                final List<T> others = listWithout(is, pos);
+
+                final List<List<T>> otherSubsets = subsets(others);
+
+                for (List<T> otherSubset : otherSubsets) {
+                    result.add(otherSubset);
+
+                    final List<T> withSubset = new ArrayList<T>();
+                    withSubset.addAll(otherSubset);
+                    withSubset.add(i);
+                    result.add(withSubset);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private static <T> List<T> listWithout(final List<T> original, int pos) {
+        final List<T> result = new ArrayList<T>();
+        result.addAll(original.subList(0, pos));
+        result.addAll(original.subList(pos+1, original.size()));
+
         return result;
     }
 }

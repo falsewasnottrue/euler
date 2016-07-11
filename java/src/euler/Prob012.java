@@ -1,5 +1,7 @@
 package euler;
 
+import util.Primes;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,27 +26,34 @@ public class Prob012 {
 
     public static void main(final String... args) {
 
-        final int divCount = 200;
+        final int divCount = 100;
         boolean found = false;
         long current = 1;
         long step = 2;
+        int max = 0;
 
         while (!found) {
-            // System.out.println(current);
-            final Set<Long> divisors = new HashSet<>();
-            for (long i=1; i<=current; i++) {
-                if (current % i == 0) {
-                    divisors.add(i);
-                }
+            long now = System.currentTimeMillis();
+            int divisors = Primes.divisors(current).size();
+            long duration = System.currentTimeMillis() - now;
+
+            if (divisors > max) {
+                max = divisors;
+                System.out.println("new max: " + max);
             }
-            // System.out.println(divisors.size());
-            if (divisors.size() > divCount) {
+
+            if (divisors >= divCount) {
                 found = true;
                 System.out.println(current + ": " + divisors);
             }
 
             current += step;
             step += 1;
+
+            if (step % 100 == 0) {
+                System.out.println("current: " + current);
+                System.out.println(" divisors duration: " + duration);
+            }
         }
     }
 }
