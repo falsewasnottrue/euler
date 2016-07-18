@@ -39,7 +39,7 @@ points["90"] = "ninety"
 points["100"] = "hundred"
 
 
-function text(n) { 
+var text = function(n) { 
   if (n==1000) {
     return "one thousand";
   } else {
@@ -47,7 +47,7 @@ function text(n) {
     var tens = Math.floor((n-hundreds*100) / 10);
     var ones = (n-hundreds*100-tens*10);
 
-    console.log(n + " -> " + hundreds + ", " + tens + ", " + ones);
+    // console.log(n + " -> " + hundreds + ", " + tens + ", " + ones);
 
     var result = "";
     if (hundreds > 0) {
@@ -71,3 +71,12 @@ console.log(text(17));
 console.log(text(2));
 console.log(text(181));
 console.log(text(413));
+
+var N = 1000;
+var result = 0;
+
+for (var i=1; i<=N; i++) {
+	result += text(i).length;
+}
+console.log(result);
+// 21953
