@@ -10,9 +10,9 @@ class PolynomialSpec extends FlatSpec with Matchers {
     Polynomial(List(1,0,0)).degree shouldBe 2
   }
 
-  it should "have a textual representation" in {
-    Polynomial(Nil).toString shouldBe "0"
-    Polynomial(List(1)).toString shouldBe "1.0 * x^0"
-    Polynomial(List(1,0,0)).toString shouldBe "1.0 * x^2"
-  }
+//  it should "have a textual representation" in {
+//    Polynomial(Nil).toString shouldBe "0"
+//    Polynomial(List(1)).toString shouldBe "1.0 * x^0"
+//    Polynomial(List(1,0,0)).toString shouldBe "1.0 * x^2"
+//  }
 }

@@ -19,4 +19,8 @@ object Primes {
 
     primeFactorsAcc(n, 2, Nil)
   }
+
+  private def primes(n: Int): Stream[Int] = n #:: primes(Primes.nextPrime(n))
+
+  def stream: Stream[Int] = primes(2)
 }

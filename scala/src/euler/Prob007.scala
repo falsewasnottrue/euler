@@ -9,9 +9,7 @@ import util.Primes
 object Prob007 extends App {
   val pos = 10001
 
-  def primes(n: Int): Stream[Int] = n #:: primes(Primes.nextPrime(n))
-
-  val result = primes(2).drop(pos-1).head
+  val result = Primes.stream.drop(pos-1).head
 
   println(result)
   // -> 104743
