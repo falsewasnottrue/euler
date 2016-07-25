@@ -17,4 +17,8 @@ class FractionSpec extends FlatSpec with Matchers {
   it should "test equality on reduced form" in {
     Fraction(3,6).equals(Fraction(5,10)) should be(true)
   }
+
+  it should "multiply fractions" in {
+    Fraction(1,2).multiply(Fraction(3,6)) should be(Fraction(1,4))
+  }
 }
